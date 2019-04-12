@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MeuMedico.Medicos>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h2>Bem-Vindo</h2>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Procure aqui o seu médico</h5>
+        <form class="container">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control">
+                        <option selected>Especialidade</option>
+                        @foreach (var esp in ViewBag.IDEspecialidade)
+                        {
+                            <option value="@esp.IDEspecialidade">@esp.Especialidade</option>
+                        }
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control">
+                        <option selected>Cidade</option>
+                        @foreach (var cidade in ViewBag.IDCidade)
+                        {
+                            <option value="@cidade.IDCidade">@cidade.Cidade</option>
+                        }
+                    </select>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-success">Pesquisar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<table class="table table-striped container">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Especialidade</th>
+            <th scope="col">Convenio</th>
+            <th scope="col">Clinica</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">ADM</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDMedico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidades.Especialidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AtendePorConvenio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TemClinica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidades.Cidade)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IDMedico }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.IDMedico }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.IDMedico })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

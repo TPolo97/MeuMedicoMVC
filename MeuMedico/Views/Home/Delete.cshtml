@@ -1,0 +1,79 @@
+﻿@model MeuMedico.Medicos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="card text-center col-6 mx-auto p-0">
+    <div class="card-header">
+        <h2>Deletar Médico</h2>
+    </div>
+    <div class="card-body ">
+        <form>
+            <div class="form-horizontal">
+                <hr />
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.CRM)
+                    @Html.TextBoxFor(model => model.CRM, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Nome)
+                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @id = "disabledInput" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Endereco)
+                    @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Bairro)
+                    @Html.TextBoxFor(model => model.Bairro, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.AtendePorConvenio)
+                    @Html.TextBoxFor(model => model.AtendePorConvenio, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.TemClinica)
+                    @Html.TextBoxFor(model => model.TemClinica, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.WebSiteBlog)
+                    @Html.TextBoxFor(model => model.WebSiteBlog, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Cidades.Cidade)
+                    @Html.TextBoxFor(model => model.Cidades.Cidade, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Especialidades.Especialidade)
+                    @Html.TextBoxFor(model => model.Especialidades.Especialidade, new { @class = "form-control" })
+                </div>
+            </div>
+        </form>
+        
+        @using (Html.BeginForm("Delete", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            @Html.HiddenFor(model => model.IDMedico)
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-outline-secondary" })
+            <input type="submit" value="Excluir" class="btn btn-outline-danger" />
+        </div>
+        }
+    </div>
+</div>
+
+        
