@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using System.Net;
 using System.Web.Security;
+using MeuMedico.Filtros;
 
 namespace MeuMedico.Controllers
 {
@@ -18,16 +19,7 @@ namespace MeuMedico.Controllers
             var medico = db.Medicos.Include(m => m.Cidades).Include(m => m.Especialidades).ToList();
             ViewBag.IDCidade = db.Cidades.ToList();
             ViewBag.IDEspecialidade = db.Especialidades.ToList();
-
-            if (Session["usuarioLogadoID"] != null)
-            {
-                return View(medico);
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }           
-
+            return View(medico);
         }
 
         // GET: Home/Details/5
@@ -40,6 +32,7 @@ namespace MeuMedico.Controllers
         }
 
         // GET: Home/Create
+        [LoginFiltro]
         public ActionResult Create()
         {
             ViewBag.IDCidade = new SelectList(db.Cidades, "IDCidade", "Cidade");
@@ -49,6 +42,7 @@ namespace MeuMedico.Controllers
 
         // POST: Home/Create
         [HttpPost]
+        [LoginFiltro]
         public ActionResult Create(Medicos medico)
         {
             try
@@ -70,6 +64,7 @@ namespace MeuMedico.Controllers
         }
 
         // GET: Home/Edit/5
+        [LoginFiltro]
         public ActionResult Edit(int id)
         {
             Medicos medico = db.Medicos.Find(id);
@@ -80,6 +75,7 @@ namespace MeuMedico.Controllers
 
         // POST: Home/Edit/5
         [HttpPost]
+        [LoginFiltro]
         public ActionResult Edit(Medicos medico)
         {
             try
@@ -101,6 +97,7 @@ namespace MeuMedico.Controllers
         }
 
         // GET: Home/Delete/5
+        [LoginFiltro]
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -117,6 +114,7 @@ namespace MeuMedico.Controllers
 
         // POST: Home/Delete/5
         [HttpPost]
+        [LoginFiltro]
         public ActionResult Delete(long IDMedico)
         {
             try
@@ -155,6 +153,13 @@ namespace MeuMedico.Controllers
                 }
             }
             return View(u);
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

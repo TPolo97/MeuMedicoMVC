@@ -185,6 +185,7 @@
     <Compile Include="Estados.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Filtros\LoginFiltroAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,7 +208,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CidadeMetaDados.cs" />
-    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\EspecialidadesMetaDados.cs" />
     <Compile Include="Models\EstadosMetaDados.cs" />
     <Compile Include="Models\MedicoMetaDados.cs" />
