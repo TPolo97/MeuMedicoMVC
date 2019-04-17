@@ -202,6 +202,7 @@ namespace MeuMedico.Controllers
             Usuarios novoUsuario = new Usuarios { Nome = viewModel.Nome, Usuario = viewModel.Login, Senha = Hash.GeraHash(viewModel.Senha) };
             db.Usuarios.Add(novoUsuario);
             db.SaveChanges();
+            TempData["Mensagem"] = "Cadastro realizado com sucesso";
             return RedirectToAction("Index", "Home");
         }
 
@@ -231,7 +232,7 @@ namespace MeuMedico.Controllers
             usuario.Senha = Hash.GeraHash(viewmodel.NovaSenha);
             db.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index", "Painel");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

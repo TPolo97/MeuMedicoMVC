@@ -34,10 +34,15 @@
                     </ul>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a href="@Url.Action("Logout", "Home")" class="btn btn-outline-secondary">Logout</a>
+                        <li class="nav-link nav-item">
+                            <a href="@Url.Action("AlterarSenha", "Home")" class="btn btn-outline-primary">Alterar Senha</a>
+                        </li>
+                        <li class="nav-link nav-item">
+                            <a href="@Url.Action("Logout", "Home")" class="btn btn-outline-secondary">Logout</a>
+                        </li>
                     }
                     else
-                    {   
+                    {
                         <li class="nav-item nav-link">
                             <a href="@Url.Action("Login", "Home")" class="btn btn-outline-primary ">Login</a>
                         </li>
@@ -45,7 +50,7 @@
                             <a href="@Url.Action("Cadastrar", "Home")" class="btn btn-outline-primary ">Cadastrar-se</a>
                         </li>
                     }
-                    </div>
+                </div>
             </div>
         </nav>
 
