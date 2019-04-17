@@ -62,10 +62,10 @@
     <Key>
       <PropertyRef Name="IDUsuario" />
     </Key>
-    <Property Name="IDUsuario" Type="int" Nullable="false" />
+    <Property Name="IDUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="varchar" MaxLength="80" />
     <Property Name="Usuario" Type="varchar" MaxLength="30" />
-    <Property Name="Senha" Type="varchar" MaxLength="10" />
+    <Property Name="Senha" Type="varchar" MaxLength="100" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK__Cidades__Cidade__403A8C7D">

@@ -152,3 +152,16 @@ D:\C#\MeuMedico\MeuMedico\bin\EntityFramework.dll
 D:\C#\MeuMedico\MeuMedico\bin\EntityFramework.SqlServer.dll
 D:\C#\MeuMedico\MeuMedico\bin\EntityFramework.xml
 D:\C#\MeuMedico\MeuMedico\bin\EntityFramework.SqlServer.xml
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.dll
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.Cookies.dll
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.dll
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.OAuth.dll
+D:\C#\MeuMedico\MeuMedico\bin\Newtonsoft.Json.dll
+D:\C#\MeuMedico\MeuMedico\bin\Owin.dll
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.xml
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.xml
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.Cookies.xml
+D:\C#\MeuMedico\MeuMedico\bin\Microsoft.Owin.Security.OAuth.xml
+D:\C#\MeuMedico\MeuMedico\bin\Newtonsoft.Json.xml

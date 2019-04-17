@@ -11,17 +11,12 @@ namespace MeuMedico
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Usuarios
     {
         public int IDUsuario { get; set; }
         public string Nome { get; set; }
-        [Display(Name = "Login")]
-        [Required(ErrorMessage = "Informe o nome do usuário", AllowEmptyStrings = false)]
         public string Usuario { get; set; }
-        [Required(ErrorMessage = "Informe a senha do usuário", AllowEmptyStrings = false)]
-        [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
         public string Senha { get; set; }
         public string Email { get; set; }
     }
